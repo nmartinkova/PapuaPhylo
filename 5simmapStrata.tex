@@ -1,0 +1,47 @@
+\documentclass{standalone}
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary {arrows.meta}
+
+
+\begin{document}
+\begin{tikzpicture}
+
+\node (F) at (440.64,-18.15) {Saruwaged};
+\node (L) at (436.65,-15.52) {Lowlands};
+\node (W) at (435.59,-17.29) {Mt. Wilhelm};
+
+\node[anchor = south east] (a) at (L.north -| W.west) {\Large B};
+
+\draw[arrows = {-Stealth[harpoon]}, line width = 1.43 ] (F) -- (L);
+\draw[arrows = {-Stealth[harpoon]}, line width = 3.89, shorten <=12pt, shorten >=15pt] ($(L)+(0.5,0)$) -- ($(F)+(0.5,0)$);
+
+\draw[arrows = {-Stealth[harpoon]}, line width = 4.01] (W) -- (F);
+\draw[arrows = {-Stealth[harpoon]}, line width = 3.4, shorten <=25pt, shorten >=31pt] ($(F)+(0,-0.3)$) -- ($(W)+(0,-0.3)$);
+
+\draw[arrows = {-Stealth[harpoon]}, line width = 3.64] (L) -- (W); 
+\draw[arrows = {-Stealth[harpoon]}, line width = .57, shorten <=9pt, shorten >=9pt] ($(W)+(-0.4,0)$) -- ($(L)+(-0.4,0)$);
+
+
+\node (F2) at  ($(F)+(0,-3.3)$) {Saruwaged};
+%\node (L2) at ($(L)+(0,4.3)$) {Lowlands};
+\node (W2) at ($(W)+(0,-3.3)$) {Mt. Wilhelm};
+
+\node at  ($(a) + (0,-4.3)$) {\Large C};
+
+% \draw[arrows = {-Stealth[harpoon]}, line width = .01 ] (F2) -- (L2);
+%\draw[arrows = {-Stealth[harpoon]}, line width = 1.89, shorten <=12pt, shorten >=15pt] ($(L2)+(0.5,0)$) -- ($(F2)+(0.5,0)$);
+
+\draw[arrows = {-Stealth[harpoon]}, line width = 1.96] (W2) -- (F2);
+ \draw[arrows = {-Stealth[harpoon]}, line width = 0.04, shorten <=25pt, shorten >=31pt] ($(F2)+(0,-0.3)$) -- ($(W2)+(0,-0.3)$);
+
+% \draw[arrows = {-Stealth[harpoon]}, line width = 2.6] (L2) -- (W2); 
+%\draw[arrows = {-Stealth[harpoon]}, line width = 5.35, shorten <=9pt, shorten >=9pt] ($(W2)+(-0.4,0)$) -- ($(L2)+(-0.4,0)$);
+
+\node[anchor = north east] (mapa) at (a.north west) {\includegraphics[width = 10cm]{Results/map.pdf}};
+\node[anchor = north west] at (mapa.north west) {\Large A};
+
+\end{tikzpicture}
+\end{document}
